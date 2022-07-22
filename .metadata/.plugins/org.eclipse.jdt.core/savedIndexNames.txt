@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+D:\IT Surface\May-Weekday-Workspace\.metadata\.plugins\org.eclipse.jdt.core
+937145259.index
+860942705.index
+3313484748.index
+107573622.index
+1865797976.index
