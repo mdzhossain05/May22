@@ -1,0 +1,98 @@
+package sampleSelenium;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AutomationPractice {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\zakir\\Downloads\\chromedriver_win32 (4)\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://automationpractice.com/index.php");
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
+		signButton.click();
+		
+		WebElement createEmailTextbox = driver.findElement(By.id("email_create"));
+		createEmailTextbox.sendKeys("ajsgfkuskfha@gmail.com");
+		
+		WebElement createButton = driver.findElement(By.id("SubmitCreate"));
+		createButton.click();
+		
+		//implicite wait
+		
+		//explicite wait
+		
+		
+		WebElement title = driver.findElement(By.id("id_gender1"));
+		title.click();
+		
+//		WebElement firstName = driver.findElement(By.id("customer.firstName"));
+//		firstName.sendKeys("firstName");
+//		
+//		WebElement lastName = driver.findElement(By.id("customer.lastName"));
+//		lastName.sendKeys("lastName");
+//		
+//		WebElement address = driver.findElement(By.id("customer.address.street"));
+//		address.sendKeys("101 anything street");
+//		
+//		WebElement city = driver.findElement(By.id("customer.address.city"));
+//		city.sendKeys("Vienna");
+//		
+//		WebElement state = driver.findElement(By.id("customer.address.state"));
+//		state.sendKeys("Virginia");
+//		
+//		WebElement zip = driver.findElement(By.id("customer.address.zipCode"));
+//		zip.sendKeys("22222");
+//		
+//		WebElement phone = driver.findElement(By.id("customer.phoneNumber"));
+//		phone.sendKeys("215421156");
+//		
+//		WebElement ssn = driver.findElement(By.id("customer.ssn"));
+//		ssn.sendKeys("215316455");
+//		
+//		WebElement userName = driver.findElement(By.id("customer.username"));
+//		userName.sendKeys("myName2");
+//		
+//		WebElement password = driver.findElement(By.id("customer.password"));
+//		password.sendKeys("1234567890");
+//		
+//		WebElement confirm = driver.findElement(By.id("repeatedPassword"));
+//		confirm.sendKeys("1234567890");
+//		
+//		WebElement registerButton = driver.findElement(By.xpath("//input[@value = 'Register']"));
+//		registerButton.click();
+//		
+//		WebElement header = driver.findElement(By.className("title"));
+//		String headerText = header.getText();
+//		System.out.println(headerText);
+//		
+//		WebElement message = driver.findElement(By.xpath("//div[@id = 'rightPanel']/p"));
+//		String messageText = message.getText();
+//		System.out.println(messageText);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
