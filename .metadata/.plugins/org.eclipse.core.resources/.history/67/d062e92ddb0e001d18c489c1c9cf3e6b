@@ -1,0 +1,16 @@
+package sampleSelenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PageObject {
+	
+	public void signInButton() {
+		WebDriver driver = new ChromeDriver();
+		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
+		signButton.click();
+	}
+
+}

@@ -1,0 +1,20 @@
+package sampleSelenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PageObject {
+	
+	public void signInButton(WebDriver driver) {
+		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
+		signButton.click();
+	}
+	
+	public void insertEmailAddress(WebDriver driver) {
+		WebElement createEmailTextbox = driver.findElement(By.id("email_create"));
+		createEmailTextbox.sendKeys("automationClass3@gmail.com");
+	}
+
+}

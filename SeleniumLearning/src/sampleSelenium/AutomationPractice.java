@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AutomationPractice {
 
@@ -20,21 +22,31 @@ public class AutomationPractice {
 		
 		driver.manage().window().maximize();
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
-		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
-		signButton.click();
+		LoginPage pb = new LoginPage(driver);
 		
-		WebElement createEmailTextbox = driver.findElement(By.id("email_create"));
-		createEmailTextbox.sendKeys("ajsgfkuskfha@gmail.com");
+		pb.signInButton().click();
+//		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
+//		signButton.click();
 		
-		WebElement createButton = driver.findElement(By.id("SubmitCreate"));
-		createButton.click();
+		pb.insertEmailAddress().sendKeys("automationClass3@gmail.com");
+//		WebElement createEmailTextbox = driver.findElement(By.id("email_create"));
+//		createEmailTextbox.sendKeys("automationClass3@gmail.com");
 		
-		//implicite wait
+		pb.createAccountButton().click();
+//		WebElement createButton = driver.findElement(By.id("SubmitCreate"));
+//		createButton.click();
 		
-		//explicite wait
 		
+		//implicite wait -- it's for all the webelement
+		
+		//explicite wait -- it's for a specific webelement
+		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id_gender1")));
+		
+		Thread.sleep(5000);
 		
 		WebElement title = driver.findElement(By.id("id_gender1"));
 		title.click();
@@ -76,16 +88,19 @@ public class AutomationPractice {
 		WebElement phone = driver.findElement(By.id("phone_mobile"));
 		phone.sendKeys("215421156");
 		
-//		WebElement registerButton = driver.findElement(By.xpath("//input[@value = 'Register']"));
+//		WebElement registerButton = driver.findElement(By.id("submitAccount"));
 //		registerButton.click();
-		
-//		WebElement header = driver.findElement(By.className("title"));
-//		String headerText = header.getText();
-//		System.out.println(headerText);
 //		
-//		WebElement message = driver.findElement(By.xpath("//div[@id = 'rightPanel']/p"));
-//		String messageText = message.getText();
-//		System.out.println(messageText);
+//		WebElement userName = driver.findElement(By.xpath("//*[@class='account']/span"));
+//		String actualUserNameText = userName.getText();
+//		System.out.println(actualUserNameText);
+//		String expectedUserNameText = "firstName lastName";
+//		
+//		if(actualUserNameText.equals(expectedUserNameText)) {
+//			System.out.println("User name is matching - test passed");
+//		}else {
+//			System.out.println("User name is not matching - test failed");
+//		}
 		
 		
 		

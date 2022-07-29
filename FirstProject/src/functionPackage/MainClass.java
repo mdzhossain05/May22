@@ -5,7 +5,7 @@ import functionPackageTwo.AddNumbers;
 public class MainClass {
 
 	public static void main(String[] args) {		
-		MainClass mainClass = new MainClass();
+//		MainClass mainClass = new MainClass();
 //		mainClass.addTwoIntNumbers(15, 20);
 //		mainClass.addTwoIntNumbers(25, 95);
 //		mainClass.addTwoIntNumbers(50, 20);
@@ -21,7 +21,7 @@ public class MainClass {
 		
 		
 		
-		AdditionIntNumbers ain = new AdditionIntNumbers();
+//		AdditionIntNumbers ain = new AdditionIntNumbers();
 //		int sumOfTwoNum = ain.addTwoIntNumbers(10, 20);
 //		System.out.println(sumOfTwoNum);
 //		
@@ -51,27 +51,60 @@ public class MainClass {
 //		an.addThreeIntNumbers(20, 30, 40);
 		
 		
-		AdditionDoubleNumber adn = new AdditionDoubleNumber();
-		System.out.println(adn.a);
-		adn.a = 11;
-		System.out.println(adn.a);
+//		AdditionDoubleNumber adn = new AdditionDoubleNumber();
+//		System.out.println(adn.a);
+//		adn.a = 11;
+//		System.out.println(adn.a);
+//		
+//		AdditionDoubleNumber adn2 = new AdditionDoubleNumber();
+//		System.out.println(adn2.a);
+//		adn2.a = 21;
+//		System.out.println(adn2.a);
+//		
+//		AdditionDoubleNumber adn3 = new AdditionDoubleNumber();
+//		System.out.println(adn3.a);
+//		adn3.a = 31;
+//		System.out.println(adn3.a);
+//		
+//		System.out.println(adn.a);
+//		System.out.println(adn2.a);
+//		System.out.println(adn3.a);
 		
-		AdditionDoubleNumber adn2 = new AdditionDoubleNumber();
-		System.out.println(adn2.a);
-		adn2.a = 21;
-		System.out.println(adn2.a);
 		
-		AdditionDoubleNumber adn3 = new AdditionDoubleNumber();
-		System.out.println(adn3.a);
-		adn3.a = 31;
-		System.out.println(adn3.a);
+		AdditionIntNumbers ain = new AdditionIntNumbers(30);
 		
-		System.out.println(adn.a);
-		System.out.println(adn2.a);
-		System.out.println(adn3.a);
+		System.out.println(ain.x);
+		System.out.println(ain.addTwoIntNumbers(20, 40));
+		ain.addThreeIntNumbers(10, 20, 30);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	public void addTwoDoubleNumbers(double g, double h) {

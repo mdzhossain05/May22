@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;sampleSelenium.PageObject&apos; to &apos;LoginPage&apos;&#x0D;&#x0A;- Original project: &apos;SeleniumLearning&apos;&#x0D;&#x0A;- Original element: &apos;sampleSelenium.PageObject&apos;&#x0D;&#x0A;- Renamed element: &apos;sampleSelenium.LoginPage&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;PageObject&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;sampleSelenium{PageObject.java[PageObject" matchStrategy="1" name="LoginPage" qualified="false" references="true" similarDeclarations="false" stamp="1659058106770" textual="false" version="1.0"/>
+</session>
