@@ -22,5 +22,20 @@ public class LoginPage {
 		WebElement createButton = iDriver.findElement(By.id("SubmitCreate"));
 		return createButton;
 	}
+	
+	public WebElement loginEmailAddress() {
+		WebElement loginEmailTextbox = iDriver.findElement(By.id("email"));
+		return loginEmailTextbox;
+	}
+	
+	public WebElement password() {
+		WebElement passwordTextbox = iDriver.findElement(By.id("passwd"));
+		return passwordTextbox;
+	}
+	
+	public WebElement loginButton() {
+		WebElement loginBtn = iDriver.findElement(By.id("SubmitLogin"));
+		return loginBtn;
+	}
 
 }

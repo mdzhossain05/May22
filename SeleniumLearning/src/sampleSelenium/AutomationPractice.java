@@ -23,18 +23,18 @@ public class AutomationPractice {
 		driver.manage().window().maximize();
 		
 //		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		HomePage hp = new HomePage(driver);
+		LoginPage lp = new LoginPage(driver);
 		
-		LoginPage pb = new LoginPage(driver);
-		
-		pb.signInButton().click();
+		hp.signInButton().click();
 //		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
 //		signButton.click();
 		
-		pb.insertEmailAddress().sendKeys("automationClass3@gmail.com");
+		lp.insertEmailAddress().sendKeys("automationClass3@gmail.com");
 //		WebElement createEmailTextbox = driver.findElement(By.id("email_create"));
 //		createEmailTextbox.sendKeys("automationClass3@gmail.com");
 		
-		pb.createAccountButton().click();
+		lp.createAccountButton().click();
 //		WebElement createButton = driver.findElement(By.id("SubmitCreate"));
 //		createButton.click();
 		
