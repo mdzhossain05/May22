@@ -5,25 +5,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SigninScript {
-	
+public class ProblemSigninScript {
 	WebDriver driver;
 	
 	@BeforeTest
 	public void initialization() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\zakir\\Downloads\\chromedriver_win32 (4)\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://www.saucedemo.com/");
+		
 		driver.manage().window().maximize();
 	}
 	
-	@Test
-	public void standardUserLogin() {
+	@Test(priority = 3)
+	public void problemUserLogin() {
+		
 		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
-		userNameTextbox.sendKeys("standard_user");
+		userNameTextbox.sendKeys("problem_user");
 		
 		WebElement passwordTextbox = driver.findElement(By.id("password"));
 		passwordTextbox.sendKeys("secret_sauce");
@@ -34,7 +35,11 @@ public class SigninScript {
 	
 	@AfterTest
 	public void closeBrowser() {
-		driver.close();
+//		driver.close();
 	}
-
+	
+	@BeforeMethod
+	public void refreshPage() {
+		driver.get("https://www.saucedemo.com/");
+	}
 }
