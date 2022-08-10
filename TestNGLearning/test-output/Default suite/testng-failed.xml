@@ -3,14 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="script.SigninScript">
+      <class name="script.DataDrivenSigninScript">
         <methods>
+          <include name="userLogin"/>
           <include name="closeBrowser"/>
-          <include name="refreshPage"/>
           <include name="initialization"/>
-          <include name="standardUserLogin"/>
         </methods>
-      </class> <!-- script.SigninScript -->
+      </class> <!-- script.DataDrivenSigninScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
