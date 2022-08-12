@@ -4,17 +4,17 @@ import org.testng.annotations.Test;
 
 public class LearningTestng {
 	
-	@Test(dependsOnMethods = "functionA")
+	@Test(groups = {"sanity", "smoke"})
 	public void functionC() {
 		System.out.println("This is function C");
 	}
-	@Test(dependsOnMethods = "functionB")
+	@Test(groups = "smoke")
 	public void functionA() {
-		System.out.println("Typing the user name");
+		System.out.println("This is function A");
 	}
-	@Test()
+	@Test(groups = "sanity")
 	public void functionB() {
-		System.out.println("Checking the user name text box displayed");
+		System.out.println("This is function B");
 	}
 	
 	

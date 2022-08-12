@@ -2,34 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="script.ProblemSigninScript">
-        <methods>
-          <include name="refreshPage"/>
-          <include name="closeBrowser"/>
-          <include name="initialization"/>
-        </methods>
-      </class> <!-- script.ProblemSigninScript -->
-      <class name="script.LockedSigninScript">
-        <methods>
-          <include name="refreshPage"/>
-          <include name="closeBrowser"/>
-          <include name="initialization"/>
-        </methods>
-      </class> <!-- script.LockedSigninScript -->
-      <class name="script.PerformanceSigninScript">
-        <methods>
-          <include name="initialization"/>
-          <include name="closeBrowser"/>
-          <include name="refreshPage"/>
-        </methods>
-      </class> <!-- script.PerformanceSigninScript -->
       <class name="script.StandardSigninScript">
         <methods>
-          <include name="standardUserLogin"/>
+          <include name="lockedOutUserLogin"/>
           <include name="initialization"/>
-          <include name="refreshPage"/>
-          <include name="closeBrowser"/>
         </methods>
       </class> <!-- script.StandardSigninScript -->
     </classes>

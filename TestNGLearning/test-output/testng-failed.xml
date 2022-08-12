@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test parallel="none" name="Default test(failed)">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="none" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="script.DataDrivenSigninScript">
+      <class name="script.StandardSigninScript">
         <methods>
-          <include name="userLogin"/>
-          <include name="closeBrowser"/>
+          <include name="lockedOutUserLogin"/>
           <include name="initialization"/>
         </methods>
-      </class> <!-- script.DataDrivenSigninScript -->
+      </class> <!-- script.StandardSigninScript -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

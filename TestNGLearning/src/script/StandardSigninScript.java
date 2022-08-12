@@ -15,15 +15,15 @@ public class StandardSigninScript {
 	
 	WebDriver driver;
 	
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	public void initialization() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\zakir\\Downloads\\chromedriver_win32 (4)\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.saucedemo.com/");
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 1, groups = {"sanity", "smoke", "regression"})
 	public void standardUserLogin() {
 		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
 		userNameTextbox.sendKeys("standard_user");
@@ -51,54 +51,54 @@ public class StandardSigninScript {
 //		}
 	}
 	
-//	@Test(priority = 2)
-//	public void lockedOutUserLogin() {
-////		driver.navigate().back();
-//		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
-//		userNameTextbox.sendKeys("locked_out_user");
-//		
-//		WebElement passwordTextbox = driver.findElement(By.id("password"));
-//		passwordTextbox.sendKeys("secret_sauce");
-//		
-//		WebElement loginButton = driver.findElement(By.id("login-button"));
-//		loginButton.click();
-//	}
-//	
-//	@Test(priority = 3)
-//	public void problemUserLogin() {
-//		
-//		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
-//		userNameTextbox.sendKeys("problem_user");
-//		
-//		WebElement passwordTextbox = driver.findElement(By.id("password"));
-//		passwordTextbox.sendKeys("secret_sauce");
-//		
-//		WebElement loginButton = driver.findElement(By.id("login-button"));
-//		loginButton.click();
-//	}
-//	
-//	@Test(priority = 4)
-//	public void performanceGlitchUserLogin() {
-////		driver.navigate().back();
-//		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
-//		userNameTextbox.sendKeys("performance_glitch_user");
-//		
-//		WebElement passwordTextbox = driver.findElement(By.id("password"));
-//		passwordTextbox.sendKeys("secret_sauce");
-//		
-//		WebElement loginButton = driver.findElement(By.id("login-button"));
-//		loginButton.click();
-//	}
+	@Test(priority = 2, groups = {"sanity", "regression"})
+	public void lockedOutUserLogin() {
+//		driver.navigate().back();
+		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
+		userNameTextbox.sendKeys("locked_out_user");
+		
+		WebElement passwordTextbox = driver.findElement(By.id("password"));
+		passwordTextbox.sendKeys("secret_sauce");
+		
+		WebElement loginButton = driver.findElement(By.id("login-button"));
+		loginButton.click();
+	}
+	
+	@Test(priority = 3, groups = {"smoke", "regression"})
+	public void problemUserLogin() {
+		
+		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
+		userNameTextbox.sendKeys("problem_user");
+		
+		WebElement passwordTextbox = driver.findElement(By.id("password"));
+		passwordTextbox.sendKeys("secret_sauce");
+		
+		WebElement loginButton = driver.findElement(By.id("login-button"));
+		loginButton.click();
+	}
+	
+	@Test(priority = 4, groups = "regression")
+	public void performanceGlitchUserLogin() {
+//		driver.navigate().back();
+		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
+		userNameTextbox.sendKeys("performance_glitch_user");
+		
+		WebElement passwordTextbox = driver.findElement(By.id("password"));
+		passwordTextbox.sendKeys("secret_sauce");
+		
+		WebElement loginButton = driver.findElement(By.id("login-button"));
+		loginButton.click();
+	}
 	
 	@AfterTest
 	public void closeBrowser() {
-//		driver.close();
+		driver.close();
 	}
 	
-//	@BeforeMethod
-//	public void refreshPage() {
-//		driver.get("https://www.saucedemo.com/");
-//	}
+	@BeforeMethod(alwaysRun = true)
+	public void refreshPage() {
+		driver.get("https://www.saucedemo.com/");
+	}
 	
 
 	
