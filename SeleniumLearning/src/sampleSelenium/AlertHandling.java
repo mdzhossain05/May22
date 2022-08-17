@@ -2,6 +2,7 @@ package sampleSelenium;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,18 +25,16 @@ public class AlertHandling {
 		
 		WebElement fourthClickButton = driver.findElement(By.id("promtButton"));
 		fourthClickButton.click();
-		
 		// accept()
 		// dismiss()
 		Thread.sleep(2000);
+		Alert alert = driver.switchTo().alert();
 		
-		String alertMsg = driver.switchTo().alert().getText();
+		String alertMsg = alert.getText();//driver.switchTo().alert().getText();
 		System.out.println(alertMsg);
-		
-		driver.switchTo().alert().sendKeys("Your Name");
-		
-		driver.switchTo().alert().accept();
-//		driver.switchTo().alert().dismiss();
+		alert.sendKeys("Your Name");//driver.switchTo().alert().sendKeys("Your Name");
+		alert.accept(); //driver.switchTo().alert().accept();
+//		alert.dismiss(); //driver.switchTo().alert().dismiss();
 		
 	}
 
