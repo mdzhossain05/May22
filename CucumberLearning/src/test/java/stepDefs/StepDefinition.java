@@ -55,4 +55,33 @@ public class StepDefinition {
 		userNameTextbox.sendKeys("locked_out_user");
 	}
 	
+	@When("user insert user name in user name textbox")
+	public void user_insert_user_name_in_user_name_textbox() {
+		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
+		userNameTextbox.sendKeys("standard_user");
+	}
+
+	@When("user insert password in password textbox")
+	public void user_insert_password_in_password_textbox() {
+		WebElement passwordTextbox = driver.findElement(By.id("password"));
+		passwordTextbox.sendKeys("secret_sauce");
+	}
+
+	@When("click on sign in button")
+	public void click_on_sign_in_button() {
+		WebElement loginButton = driver.findElement(By.id("login-button"));
+		loginButton.click();
+	}
+	
+	@When("user insert {string} in user name textbox")
+	public void user_insert_in_user_name_textbox(String username) {
+		WebElement userNameTextbox = driver.findElement(By.id("user-name"));
+		userNameTextbox.sendKeys(username);
+	}
+	
+	@When("user insert {string} in password textbox")
+	public void user_insert_in_password_textbox(String pwd) {
+		WebElement passwordTextbox = driver.findElement(By.id("password"));
+		passwordTextbox.sendKeys(pwd);
+	}
 }
