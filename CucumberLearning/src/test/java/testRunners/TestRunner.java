@@ -10,8 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 		
 		features = "Features",
 		glue = "stepDefs",
-		plugin = { "pretty", "html:target/cucumber-reports.html" },
-		tags = "@smoke"
+		plugin = { "pretty", "html:target/cucumber-reports" },
+		tags = "@smoke",
+		monochrome = true 
 		
 		
 		)

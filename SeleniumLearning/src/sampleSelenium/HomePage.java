@@ -5,14 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage {
-WebDriver iDriver;
+WebDriver driver;
 	
 	public HomePage(WebDriver driver) {
-		iDriver = driver;
+		this.driver = driver;
 	}
 	
 	public WebElement signInButton() {
-		WebElement signButton = iDriver.findElement(By.xpath("//*[@class='login']"));
+		WebElement signButton = driver.findElement(By.xpath("//*[@class='login']"));
 		return signButton;
 	}
 	

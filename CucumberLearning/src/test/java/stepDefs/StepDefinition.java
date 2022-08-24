@@ -84,4 +84,9 @@ public class StepDefinition {
 		WebElement passwordTextbox = driver.findElement(By.id("password"));
 		passwordTextbox.sendKeys(pwd);
 	}
+	
+	//Hooks
+	//@Before - initialization - usually we dont use it
+	
+	//@After - post condition - we use it to close the browser
 }
