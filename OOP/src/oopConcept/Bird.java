@@ -1,6 +1,6 @@
 package oopConcept;
 
-public class Bird implements SampleInterface{
+public class Bird implements SampleInterface, AnotherInterface{
 	
 	public void fly() {
 		System.out.println("Flying");

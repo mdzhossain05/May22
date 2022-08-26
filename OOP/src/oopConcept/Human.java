@@ -6,6 +6,11 @@ public class Human extends Animal {
 		System.out.println("Eat Coocked Food");
 	}
 	
+	public void calling() {
+		super.eat();
+		this.eat();
+	}
+	
 	public void sleep() {
 		System.out.println("Sleep in bed");
 	}
