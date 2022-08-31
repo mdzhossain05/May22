@@ -9,11 +9,20 @@ public class LoginPage {
 	
 	WebDriver iDriver;
 	
+	public LoginPage() {
+		System.out.println("sample");
+	}
+	
 	public LoginPage(WebDriver driver) {
 		iDriver = driver;
 	}
 	
 	public WebElement insertEmailAddress() {
+		WebElement createEmailTextbox = iDriver.findElement(By.id("email_create"));
+		return createEmailTextbox;
+	}
+	
+	public WebElement insertEmailAddress(String name) {
 		WebElement createEmailTextbox = iDriver.findElement(By.id("email_create"));
 		return createEmailTextbox;
 	}
